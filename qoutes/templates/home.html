@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Home </h1>
+{% if ticker %}
+{{ticker}}
+{% endif %}
+
+{% if api %}
+    {% if api == 'Error...' %}
+    Something wronge
+    {% else %}
+    <h1>{{api.companyName}}</h1>
+    Price:{{api.latestPrice}}<br/>
+    Previous Close:{{api.previousClose}}<br/>
+    Market Cap: {{api.marketCap}}<br/>
+    YTD Change:{{api.ytdChange}}<br/>
+
+    
+    
+    {% endif %}
+
+
+{% endif %}
+
+{% endblock  %}
